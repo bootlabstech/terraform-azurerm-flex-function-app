@@ -13,10 +13,10 @@ variable "location" {
   description = "Azure region"
 }
 
-variable "app_service_plan_id" {
-  type        = string
-  description = "ID of existing Flex Consumption App Service Plan (FC1)"
-}
+# variable "app_service_plan_id" {
+#   type        = string
+#   description = "ID of existing Flex Consumption App Service Plan (FC1)"
+# }
 
 variable "storage_account_name" {
   type        = string
