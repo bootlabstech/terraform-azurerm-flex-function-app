@@ -69,6 +69,19 @@ variable "public_network_access_enabled" {
   default     = false
   description = "to enable public access"
 }
+
+variable "asp_sku" {
+  type        = string
+  default     = "FC1"
+  description = "App Service Plan SKU. Default is FC1 (Azure Functions Flex Consumption plan)."
+}
+
+variable "asp_os_type" {
+  type        = string
+  default     = "Linux"
+  description = "Operating system type for the App Service Plan. Default is Linux."
+}
+
 # App Settings
 # variable "app_settings" {
 #   type        = map(string)
