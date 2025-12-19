@@ -23,11 +23,6 @@ variable "storage_account_name" {
   description = "Existing Storage Account name"
 }
 
-variable "storage_container_name" {
-  type        = string
-  description = "Blob container name for Flex Function App"
-}
-
 variable "runtime_stack" {
   type        = string
   description = "Runtime stack (node | python | dotnet | java)"
