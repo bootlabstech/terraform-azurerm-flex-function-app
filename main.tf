@@ -1,11 +1,3 @@
-resource "azurerm_service_plan" "example" {
-  name                = "${var.function_app_name}-flexasp"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  sku_name            = var.asp_sku
-  os_type             = var.asp_os_type
-}
-
 # Existing Storage Account
 data "azurerm_storage_account" "func_sa" {
   name                = var.storage_account_name
@@ -16,7 +8,7 @@ resource "azurerm_function_app_flex_consumption" "this" {
   name                = var.function_app_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  service_plan_id     = azurerm_service_plan.example.id
+  service_plan_id     = var.app_service_plan_id
 
   #   # Storage
   storage_container_type      = "blobContainer"
@@ -40,6 +32,7 @@ resource "azurerm_function_app_flex_consumption" "this" {
     app_command_line       = var.app_command_line
     vnet_route_all_enabled = var.vnet_route_all_enabled
   }
+
   lifecycle {
     ignore_changes = [
       app_settings,
