@@ -32,6 +32,10 @@ resource "azurerm_function_app_flex_consumption" "this" {
     app_command_line       = var.app_command_line
     vnet_route_all_enabled = var.vnet_route_all_enabled
   }
+  
+    depends_on = [
+    azurerm_service_plan.function_plan
+  ]
 
   lifecycle {
     ignore_changes = [
