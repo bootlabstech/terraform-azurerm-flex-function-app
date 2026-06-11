@@ -13,10 +13,10 @@ variable "location" {
   description = "Azure region"
 }
 
-variable "app_service_plan_id" {
-  type        = string
-  description = "ID of existing Flex Consumption App Service Plan (FC1)"
-}
+# variable "app_service_plan_id" {
+#   type        = string
+#   description = "ID of existing Flex Consumption App Service Plan (FC1)"
+# }
 
 variable "storage_account_name" {
   type        = string
@@ -69,6 +69,19 @@ variable "public_network_access_enabled" {
   default     = false
   description = "to enable public access"
 }
+
+variable "asp_sku" {
+  type        = string
+  default     = "FC1"
+  description = "App Service Plan SKU. Default is FC1 (Azure Functions Flex Consumption plan)."
+}
+
+variable "asp_os_type" {
+  type        = string
+  default     = "Linux"
+  description = "Operating system type for the App Service Plan. Default is Linux."
+}
+
 # App Settings
 # variable "app_settings" {
 #   type        = map(string)
