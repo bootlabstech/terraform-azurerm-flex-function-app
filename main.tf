@@ -42,7 +42,7 @@ resource "azurerm_function_app_flex_consumption" "this" {
   }
 
   depends_on = [
-    azurerm_service_plan.function_plan
+    azurerm_service_plan.example
   ]
   lifecycle {
     ignore_changes = [
