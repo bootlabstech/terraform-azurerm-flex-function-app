@@ -70,7 +70,7 @@ resource "azurerm_private_endpoint" "endpoint" {
   }
 
   private_dns_zone_group {
-    name                 = "${var.name}-dnszone"
+    name                 = "${var.function_app_name}-dnszone"
     private_dns_zone_ids = var.private_dns_zone_ids
   }
 
