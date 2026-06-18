@@ -90,3 +90,28 @@ variable "asp_os_type" {
 #     WEBSITE_RUN_FROM_PACKAGE = "1"
 #   }
 # }
+
+# Private Endpoint variables
+variable "private_endpoint_subnet_id" {
+  type        = string
+  description = "Subnet ID from which Private IP Addresses will be allocated for this Private Endpoint."
+}
+
+variable "is_manual_connection" {
+  type        = bool
+  description = "Does the Private Endpoint require manual approval?"
+  default     = false
+}
+
+variable "subresource_names" {
+  type        = list(string)
+  description = "Subresources the Private Endpoint can connect to."
+  default     = ["sites"]
+}
+
+variable "private_dns_zone_ids" {
+  type        = list(string)
+  description = "List of Private DNS Zones to associate with the Private Endpoint."
+}
+
+
