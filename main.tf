@@ -57,13 +57,13 @@ resource "azurerm_function_app_flex_consumption" "this" {
 
 # Private endpoint block stays same
 resource "azurerm_private_endpoint" "endpoint" {
-  name                = "${var.name}-pe"
+  name                = "${var.function_app_name}-pe"
   location            = var.location
   resource_group_name = var.resource_group_name
   subnet_id           = var.private_endpoint_subnet_id
 
   private_service_connection {
-    name                           = "${var.name}-connection"
+    name                           = "${var.function_app_name}-connection"
     private_connection_resource_id = azurerm_function_app_flex_consumption.this.id
     is_manual_connection           = var.is_manual_connection
     subresource_names              = var.subresource_names
