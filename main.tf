@@ -79,5 +79,4 @@ resource "azurerm_private_endpoint" "endpoint" {
       tags,
     ]
   }
-}
 
