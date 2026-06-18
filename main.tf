@@ -78,5 +78,5 @@ resource "azurerm_private_endpoint" "endpoint" {
     ignore_changes = [
       tags,
     ]
-  }
+  }}
 
